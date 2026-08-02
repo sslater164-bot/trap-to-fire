@@ -8,6 +8,13 @@
 <meta property="og:title" content="Trap to Fire — Mind · Body · Money">
 <meta property="og:description" content="Escape the trap. Build the fire. The daily discipline app for men.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="assets/icons/icon-512.png">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Trap to Fire">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Anton&display=swap" rel="stylesheet">
@@ -45,6 +52,40 @@
   .badge{display:inline-block; margin:18px 0 6px; padding:6px 14px; border-radius:999px; background:var(--panel2); border:1px solid var(--line); color:var(--gold); font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;}
   .foot{color:var(--mute); font-size:11px; margin-top:22px; line-height:1.6;}
   .foot b{color:var(--off);}
+
+  .tips{margin:26px 0 8px; text-align:left;}
+  .tips h2{font-family:'Anton',sans-serif; font-weight:400; font-size:15px; letter-spacing:1px; text-transform:uppercase; color:var(--flame); margin:0 0 10px 2px;}
+  .tips-track{
+    display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory;
+    padding:2px 2px 12px; -webkit-overflow-scrolling:touch; scrollbar-width:none;
+  }
+  .tips-track::-webkit-scrollbar{display:none;}
+  .tips-track img{
+    flex:0 0 auto; width:78%; max-width:320px; aspect-ratio:1080/1185; object-fit:cover;
+    border-radius:14px; border:1px solid var(--line); scroll-snap-align:center;
+    background:var(--panel);
+  }
+  .tips-dots{display:flex; justify-content:center; gap:6px; margin-top:4px;}
+  .tips-dots span{width:6px; height:6px; border-radius:50%; background:var(--line);}
+  .tips-dots span.active{background:var(--ember);}
+
+  .streak{
+    margin:22px 0 4px; padding:20px 18px; border-radius:16px;
+    background:var(--panel); border:1px solid var(--line);
+  }
+  .streak-num{font-family:'Anton',sans-serif; font-size:44px; line-height:1; color:var(--flame);}
+  .streak-num span{font-size:16px; color:var(--mute); font-family:'Poppins',sans-serif; font-weight:600; margin-left:6px;}
+  .streak-label{color:var(--mute); font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin:2px 0 14px;}
+  .checkin-btn{
+    display:block; width:100%; padding:14px; border-radius:12px; border:none; cursor:pointer;
+    font-family:'Anton',sans-serif; font-weight:400; font-size:15px; letter-spacing:0.5px; text-transform:uppercase;
+    background:linear-gradient(135deg,var(--ember),var(--deep)); color:var(--off);
+    box-shadow:0 6px 22px rgba(232,68,44,0.38); transition:transform .12s ease, opacity .2s ease;
+  }
+  .checkin-btn:active{transform:translateY(1px);}
+  .checkin-btn[disabled]{background:var(--panel2); box-shadow:none; color:var(--gold); cursor:default; border:1px solid rgba(231,180,76,0.4);}
+  .streak-best{color:var(--mute); font-size:11px; margin-top:10px;}
+  .streak-best b{color:var(--off);}
 </style>
 </head>
 <body>
@@ -56,12 +97,121 @@
 
     <div class="badge">🚧 Launching soon</div>
 
-    <a class="btn primary" href="mailto:sslater164@gmail.com?subject=Trap%20to%20Fire%20-%20early%20access">🔥 Get Early Access</a>
+    <div class="streak" id="streakBox">
+      <div class="streak-num" id="streakNum">0<span>day streak</span></div>
+      <div class="streak-label">Show up today. Build the fire.</div>
+      <button class="checkin-btn" id="checkinBtn" data-track="checkin">Check In Today</button>
+      <div class="streak-best" id="streakBest"></div>
+    </div>
 
-    <a class="btn gold" href="https://gcpeptides.com" target="_blank" rel="noopener"><span class="ico">💊</span> GC Peptides — 20% off inside</a>
-    <a class="btn" href="https://transformationtunit247.co.uk" target="_blank" rel="noopener"><span class="ico">💪</span> TUNIT — Transformation 24/7</a>
+    <a class="btn primary" data-track="get_early_access" href="mailto:sslater164@gmail.com?subject=Trap%20to%20Fire%20-%20early%20access">🔥 Get Early Access</a>
+
+    <a class="btn gold" data-track="gc_peptides" href="https://gcpeptides.com" target="_blank" rel="noopener"><span class="ico">💊</span> GC Peptides — 20% off inside</a>
+    <a class="btn" data-track="tunit" href="https://transformationtunit247.co.uk" target="_blank" rel="noopener"><span class="ico">💪</span> TUNIT — Transformation 24/7</a>
+
+    <div class="tips">
+      <h2>Daily Discipline Tips</h2>
+      <div class="tips-track" id="tipsTrack">
+        <img src="assets/tips/traptofire-01.jpg" alt="Trap to Fire daily discipline tip 1" loading="lazy">
+        <img src="assets/tips/traptofire-02.jpg" alt="Trap to Fire daily discipline tip 2" loading="lazy">
+        <img src="assets/tips/traptofire-03.jpg" alt="Trap to Fire daily discipline tip 3" loading="lazy">
+        <img src="assets/tips/traptofire-04.jpg" alt="Trap to Fire daily discipline tip 4" loading="lazy">
+        <img src="assets/tips/traptofire-05.jpg" alt="Trap to Fire daily discipline tip 5" loading="lazy">
+        <img src="assets/tips/traptofire-06.jpg" alt="Trap to Fire daily discipline tip 6" loading="lazy">
+        <img src="assets/tips/traptofire-07.jpg" alt="Trap to Fire daily discipline tip 7" loading="lazy">
+        <img src="assets/tips/traptofire-08.jpg" alt="Trap to Fire daily discipline tip 8" loading="lazy">
+        <img src="assets/tips/traptofire-09.jpg" alt="Trap to Fire daily discipline tip 9" loading="lazy">
+        <img src="assets/tips/traptofire-10.jpg" alt="Trap to Fire daily discipline tip 10" loading="lazy">
+        <img src="assets/tips/traptofire-11.jpg" alt="Trap to Fire daily discipline tip 11" loading="lazy">
+        <img src="assets/tips/traptofire-12.jpg" alt="Trap to Fire daily discipline tip 12" loading="lazy">
+        <img src="assets/tips/traptofire-13.jpg" alt="Trap to Fire daily discipline tip 13" loading="lazy">
+        <img src="assets/tips/traptofire-14.jpg" alt="Trap to Fire daily discipline tip 14" loading="lazy">
+        <img src="assets/tips/traptofire-15.jpg" alt="Trap to Fire daily discipline tip 15" loading="lazy">
+        <img src="assets/tips/traptofire-16.jpg" alt="Trap to Fire daily discipline tip 16" loading="lazy">
+      </div>
+      <div class="tips-dots" id="tipsDots"></div>
+    </div>
 
     <p class="foot">One link. Put it in your <b>Instagram</b> and <b>TikTok</b> bio.<br>© Trap to Fire · Powered by GC Peptides</p>
   </div>
+  <script>
+    (function(){
+      var track = document.getElementById('tipsTrack');
+      var dotsWrap = document.getElementById('tipsDots');
+      var imgs = track.querySelectorAll('img');
+      imgs.forEach(function(_, i){
+        var d = document.createElement('span');
+        if(i === 0) d.className = 'active';
+        dotsWrap.appendChild(d);
+      });
+      var dots = dotsWrap.querySelectorAll('span');
+      track.addEventListener('scroll', function(){
+        var index = Math.round(track.scrollLeft / (imgs[0].offsetWidth + 12));
+        dots.forEach(function(d, i){ d.classList.toggle('active', i === index); });
+      }, { passive: true });
+    })();
+
+    // Lightweight event tracking: pushes to window.dataLayer (ready for GA4/GTM
+    // once a measurement ID is wired up) and keeps a rolling local log.
+    function trackEvent(name, data){
+      data = data || {};
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(Object.assign({event: 't2f_' + name}, data));
+      try{
+        var log = JSON.parse(localStorage.getItem('t2f_events') || '[]');
+        log.push({name: name, data: data, t: Date.now()});
+        localStorage.setItem('t2f_events', JSON.stringify(log.slice(-200)));
+      }catch(e){}
+    }
+    document.addEventListener('click', function(e){
+      var el = e.target.closest('[data-track]');
+      if(el) trackEvent(el.dataset.track);
+    });
+
+    // Daily check-in streak, stored locally on-device.
+    (function(){
+      function todayKey(d){
+        d = d || new Date();
+        return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+      }
+      function daysBetween(a, b){
+        return Math.round((new Date(b) - new Date(a)) / 86400000);
+      }
+      var numEl = document.getElementById('streakNum');
+      var bestEl = document.getElementById('streakBest');
+      var btn = document.getElementById('checkinBtn');
+      var state = { current: 0, best: 0, last: null };
+      try{ state = Object.assign(state, JSON.parse(localStorage.getItem('t2f_streak') || '{}')); }catch(e){}
+
+      var today = todayKey();
+      if(state.last && state.last !== today && daysBetween(state.last, today) > 1){
+        state.current = 0; // missed a day, streak broken
+      }
+
+      function render(){
+        numEl.innerHTML = state.current + '<span>day streak</span>';
+        bestEl.innerHTML = state.best ? ('Best: <b>' + state.best + '</b> days') : 'Check in daily to build your streak.';
+        if(state.last === today){
+          btn.textContent = 'Checked In Today 🔥';
+          btn.disabled = true;
+        } else {
+          btn.textContent = 'Check In Today';
+          btn.disabled = false;
+        }
+      }
+      render();
+
+      btn.addEventListener('click', function(){
+        if(state.last === today) return;
+        var diff = state.last ? daysBetween(state.last, today) : null;
+        state.current = (diff === 1) ? state.current + 1 : 1;
+        state.best = Math.max(state.best, state.current);
+        state.last = today;
+        localStorage.setItem('t2f_streak', JSON.stringify(state));
+        render();
+        trackEvent('checkin_streak', { streak: state.current });
+      });
+    })();
+  </script>
 </body>
 </html>
