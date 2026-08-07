@@ -100,6 +100,10 @@
   .say + .say{margin-top:8px; border-top:1px solid var(--line); padding-top:22px;}
 
   .fn-foot{text-align:center; color:var(--mute); font-size:11px; margin-top:26px; line-height:1.7;}
+
+  .fs-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:6px;}
+  @media(min-width:520px){.fs-grid{grid-template-columns:repeat(3,1fr);}}
+  .fs-grid img{width:100%; aspect-ratio:1080/1270; object-fit:contain; border-radius:12px; border:1px solid var(--line); background:var(--panel2);}
 </style>
 </head>
 <body>
@@ -130,6 +134,7 @@
       <a href="#s15"><b>15</b>Peptides</a>
       <a href="#s16"><b>16</b>Brain Rewiring</a>
       <a href="#s17"><b>17</b>Sayings</a>
+      <a href="#s18"><b>18</b>Food for Symptoms</a>
     </nav>
 
     <section class="fn" id="s01">
@@ -530,6 +535,26 @@
       </div>
       <div class="say">
         Those with the biggest hearts are those that escape the <span>fire</span> but return with water for those still in it.
+      </div>
+    </section>
+
+    <section class="fn" id="s18">
+      <div class="fn-num">18</div>
+      <h2>Food for Symptoms</h2>
+      <p class="lede">Quick symptom → food lookup. Simple pairings, not prescriptions.</p>
+      <div class="fs-grid">
+        <img src="assets/field-notes/food-symptom-01.jpg" alt="Weak muscles? Eat eggs." loading="lazy">
+        <img src="assets/field-notes/food-symptom-02.jpg" alt="Low energy? Eat banana." loading="lazy">
+        <img src="assets/field-notes/food-symptom-03.jpg" alt="Dry skin? Eat avocado." loading="lazy">
+        <img src="assets/field-notes/food-symptom-04.jpg" alt="Constipation? Eat oats." loading="lazy">
+        <img src="assets/field-notes/food-symptom-05.jpg" alt="Tired all day? Eat dates." loading="lazy">
+        <img src="assets/field-notes/food-symptom-06.jpg" alt="Acne problems? Eat cucumber." loading="lazy">
+        <img src="assets/field-notes/food-symptom-07.jpg" alt="Low vitamin C? Eat kiwis." loading="lazy">
+        <img src="assets/field-notes/food-symptom-08.jpg" alt="Bad digestion? Eat yogurt." loading="lazy">
+        <img src="assets/field-notes/food-symptom-09.jpg" alt="Poor hydration? Drink coconut water." loading="lazy">
+        <img src="assets/field-notes/food-symptom-10.jpg" alt="Brain fog? Eat blueberries." loading="lazy">
+        <img src="assets/field-notes/food-symptom-11.jpg" alt="Weak bones? Drink milk." loading="lazy">
+        <img src="assets/field-notes/food-symptom-12.jpg" alt="Bloating? Eat ginger." loading="lazy">
       </div>
     </section>
 
