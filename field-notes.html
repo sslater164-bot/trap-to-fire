@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0F0E0D">
+<title>Trap to Fire — Field Notes</title>
+<meta property="og:title" content="Trap to Fire — Field Notes">
+<meta property="og:description" content="17 sections of field notes on nutrition, recovery, sleep, money and mindset — the reference behind Trap to Fire.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/icons/icon-512.png">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Anton&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#141010; --panel:#201814; --panel2:#2A211C; --ember:#E8442C; --flame:#FF8A3D;
+    --deep:#8B1E0F; --off:#F2EDE4; --mute:#8A847C; --line:#332821; --gold:#E7B44C; --teal:#4FA88B;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{
+    font-family:'Poppins',system-ui,sans-serif; color:var(--off); min-height:100vh;
+    background:radial-gradient(120% 90% at 50% -10%, #2A130C 0%, var(--black) 55%);
+    display:flex; justify-content:center; padding:34px 16px 60px;
+  }
+  .wrap{width:100%; max-width:640px;}
+  a{color:inherit;}
+
+  .fn-head{text-align:center; margin-bottom:26px;}
+  .fn-head .flame{font-size:44px; line-height:1;}
+  .fn-head h1{font-family:'Anton',sans-serif; font-weight:400; font-size:30px; letter-spacing:0.5px; text-transform:uppercase; margin:4px 0 2px;}
+  .fn-head .tag{font-family:'Anton',sans-serif; font-size:12px; letter-spacing:2px; color:var(--flame); text-transform:uppercase;}
+  .fn-head p{color:var(--mute); font-weight:600; font-size:13px; margin:10px auto 0; max-width:420px; line-height:1.5;}
+  .back-link{
+    display:inline-flex; align-items:center; gap:6px; margin-top:16px; font-size:13px; font-weight:700;
+    color:var(--gold); text-decoration:none; padding:8px 14px; border:1px solid rgba(231,180,76,0.4); border-radius:999px;
+  }
+
+  .toc{display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin:26px 0 34px;}
+  @media(min-width:520px){.toc{grid-template-columns:repeat(3,1fr);}}
+  .toc a{
+    display:block; padding:11px 12px; background:var(--panel); border:1px solid var(--line); border-radius:10px;
+    text-decoration:none; font-size:12.5px; font-weight:700; color:var(--off);
+  }
+  .toc a b{color:var(--flame); font-family:'Anton',sans-serif; font-weight:400; margin-right:6px;}
+
+  section.fn{
+    background:var(--panel); border:1px solid var(--line); border-radius:16px;
+    padding:22px 20px; margin-bottom:16px; scroll-margin-top:16px;
+  }
+  .fn-num{
+    display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:9px;
+    background:var(--panel2); color:var(--flame); font-family:'Anton',sans-serif; font-size:15px; margin-bottom:10px;
+  }
+  section.fn h2{font-family:'Anton',sans-serif; font-weight:400; font-size:21px; letter-spacing:0.3px; text-transform:uppercase; margin-bottom:6px;}
+  section.fn h2 span{color:var(--ember);}
+  section.fn > p.lede{color:var(--mute); font-size:13.5px; margin-bottom:14px; line-height:1.55;}
+  section.fn h3{font-family:'Anton',sans-serif; font-weight:400; font-size:14px; letter-spacing:0.4px; text-transform:uppercase; color:var(--teal); margin:18px 0 8px;}
+  section.fn h3:first-of-type{margin-top:6px;}
+  section.fn p{font-size:14px; line-height:1.6; margin-bottom:10px;}
+  section.fn ol, section.fn ul{margin:0 0 12px 20px; font-size:14px; line-height:1.7;}
+  section.fn li{margin-bottom:2px;}
+
+  .kv{margin:8px 0 16px; border-top:1px solid var(--line);}
+  .kv-row{display:flex; gap:14px; padding:10px 0; border-bottom:1px solid var(--line);}
+  .kv-row b{flex:0 0 128px; font-size:13.5px; color:var(--off);}
+  .kv-row span{font-size:13px; color:var(--mute); line-height:1.5;}
+
+  .fn-table{width:100%; border-collapse:collapse; margin:10px 0 16px; font-size:13px;}
+  .fn-table th{
+    text-align:left; font-family:'Anton',sans-serif; font-weight:400; font-size:11px; letter-spacing:0.06em;
+    color:var(--mute); text-transform:uppercase; padding:8px 10px; border-bottom:1px solid var(--line);
+  }
+  .fn-table td{padding:9px 10px; border-bottom:1px solid var(--line); color:var(--off);}
+  .fn-table tr:last-child td{border-bottom:none;}
+  .fn-table td.num, .fn-table th.num{text-align:right; font-variant-numeric:tabular-nums;}
+  .fn-table-wrap{overflow-x:auto; margin-bottom:16px;}
+
+  blockquote.fn-quote{
+    border-left:3px solid var(--gold); padding:4px 0 4px 14px; margin:14px 0; font-style:italic;
+    color:var(--off); font-size:13.5px; line-height:1.55;
+  }
+
+  .fn-note{
+    background:var(--panel2); border:1px solid var(--line); border-radius:10px; padding:12px 14px;
+    font-size:12.5px; color:var(--mute); line-height:1.55; margin:8px 0 16px;
+  }
+  .fn-note b{color:var(--gold);}
+
+  .say{
+    text-align:center; padding:22px 10px; font-family:'Anton',sans-serif; font-weight:400;
+    font-size:20px; line-height:1.35; text-transform:uppercase; letter-spacing:0.3px;
+  }
+  .say span{color:var(--ember);}
+  .say cite{display:block; margin-top:10px; font-family:'Poppins',sans-serif; font-style:normal;
+    font-weight:600; font-size:12px; color:var(--mute); text-transform:none; letter-spacing:0;}
+  .say + .say{margin-top:8px; border-top:1px solid var(--line); padding-top:22px;}
+
+  .fn-foot{text-align:center; color:var(--mute); font-size:11px; margin-top:26px; line-height:1.7;}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="fn-head">
+      <div class="flame">🔥</div>
+      <h1>Field Notes</h1>
+      <div class="tag">Trap to Fire — Mind · Body · Money</div>
+      <p>What to drink, what to eat, what to do, and why sleep is the part that actually locks it in — compiled from the field, kept in one place.</p>
+      <a class="back-link" href="index.html">← Back to app</a>
+    </div>
+
+    <nav class="toc" aria-label="Table of contents">
+      <a href="#s01"><b>01</b>Hydration</a>
+      <a href="#s02"><b>02</b>Neurotransmitter Foods</a>
+      <a href="#s03"><b>03</b>Fermented Foods</a>
+      <a href="#s04"><b>04</b>Food Pairing Tips</a>
+      <a href="#s05"><b>05</b>Nutrient Swaps</a>
+      <a href="#s06"><b>06</b>Gut–Brain</a>
+      <a href="#s07"><b>07</b>Sleep Connection</a>
+      <a href="#s08"><b>08</b>Stocks &amp; Investment</a>
+      <a href="#s09"><b>09</b>Protocols</a>
+      <a href="#s10"><b>10</b>Fat Loss Science</a>
+      <a href="#s11"><b>11</b>Food Prep Tips</a>
+      <a href="#s12"><b>12</b>Household Swaps</a>
+      <a href="#s13"><b>13</b>Bloodwork</a>
+      <a href="#s14"><b>14</b>Vitamins</a>
+      <a href="#s15"><b>15</b>Peptides</a>
+      <a href="#s16"><b>16</b>Brain Rewiring</a>
+      <a href="#s17"><b>17</b>Sayings</a>
+    </nav>
+
+    <section class="fn" id="s01">
+      <div class="fn-num">01</div>
+      <h2>Hydration</h2>
+      <p class="lede">Daily water intake by body weight, plus the training-day adjustment.</p>
+      <div class="fn-table-wrap">
+        <table class="fn-table">
+          <tr><th>Body weight</th><th class="num">Water / day</th></tr>
+          <tr><td>60 kg</td><td class="num">2.1 L</td></tr>
+          <tr><td>70 kg</td><td class="num">2.5 L</td></tr>
+          <tr><td>80 kg</td><td class="num">2.8 L</td></tr>
+          <tr><td>90 kg</td><td class="num">3.2 L</td></tr>
+          <tr><td>100 kg</td><td class="num">3.5 L</td></tr>
+          <tr><td><b>Training day</b></td><td class="num" style="color:var(--flame)">+500–750 ml/hr</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="fn" id="s02">
+      <div class="fn-num">02</div>
+      <h2>Neurotransmitter Foods</h2>
+      <p class="lede">Four brain chemicals, and the food each one is actually built from.</p>
+
+      <h3>Serotonin</h3>
+      <p class="lede">~90% is made in the gut, not the brain — what you eat sets the ceiling.</p>
+      <div class="kv">
+        <div class="kv-row"><b>Eggs</b><span>Tryptophan — the amino acid serotonin is synthesised from — alongside choline for neural signalling.</span></div>
+        <div class="kv-row"><b>Spinach</b><span>Folate deficiency is one of the most common nutritional drivers of low serotonin and depression.</span></div>
+        <div class="kv-row"><b>Walnuts</b><span>Tryptophan, omega-3s and polyphenols supporting production and gut microbiome diversity.</span></div>
+        <div class="kv-row"><b>Turkey</b><span>One of the richest sources of tryptophan available, the direct precursor to serotonin.</span></div>
+        <div class="kv-row"><b>Banana</b><span>Vitamin B6, the co-factor for the final conversion step from tryptophan into serotonin.</span></div>
+      </div>
+
+      <h3>Dopamine</h3>
+      <p class="lede">Drives motivation, focus and follow-through. Low dopamine reads as apathy and brain fog.</p>
+      <div class="kv">
+        <div class="kv-row"><b>Dark chocolate</b><span>Phenylethylamine directly triggers dopamine release.</span></div>
+        <div class="kv-row"><b>Grass-fed beef</b><span>Tyrosine and phenylalanine — the two amino acids dopamine is built from.</span></div>
+        <div class="kv-row"><b>Almonds</b><span>Phenylalanine makes this the most efficient plant-based precursor source.</span></div>
+        <div class="kv-row"><b>Avocado</b><span>Tyrosine plus healthy fats that support the myelin sheath along dopamine pathways.</span></div>
+        <div class="kv-row"><b>Blueberries</b><span>Anthocyanins protect dopamine-producing neurons from oxidative damage.</span></div>
+      </div>
+
+      <h3>GABA</h3>
+      <p class="lede">The brain's primary inhibitory signal — what lets the nervous system switch off.</p>
+      <div class="kv">
+        <div class="kv-row"><b>Fermented yogurt</b><span>Live cultures directly increase GABA-producing gut bacteria.</span></div>
+        <div class="kv-row"><b>Green tea</b><span>L-theanine crosses the blood-brain barrier — calm alertness without sedation.</span></div>
+        <div class="kv-row"><b>Broccoli</b><span>B6 in cruciferous vegetables drives the enzyme converting glutamate into GABA.</span></div>
+        <div class="kv-row"><b>Brown rice</b><span>Germinated brown rice carries natural GABA with studied anxiolytic effects.</span></div>
+        <div class="kv-row"><b>Kefir</b><span>One of the most potent fermented sources — measurably reduces anxiety markers.</span></div>
+      </div>
+
+      <h3>Acetylcholine</h3>
+      <p class="lede">Governs learning, memory and attention — depleted fast by poor sleep and stress.</p>
+      <div class="kv">
+        <div class="kv-row"><b>Eggs</b><span>Yolks are the single richest source of choline, acetylcholine's direct precursor.</span></div>
+        <div class="kv-row"><b>Liver</b><span>More choline per gram than almost any other food on earth.</span></div>
+        <div class="kv-row"><b>Sunflower seeds</b><span>Vitamin E plus choline — an underrated brain-protection food.</span></div>
+        <div class="kv-row"><b>Soybeans</b><span>A rare plant source of choline significant enough to matter.</span></div>
+        <div class="kv-row"><b>Cauliflower</b><span>Among the highest-choline vegetables — useful off animal products.</span></div>
+      </div>
+    </section>
+
+    <section class="fn" id="s03">
+      <div class="fn-num">03</div>
+      <h2>Fermented Foods &amp; Brain Health</h2>
+      <p class="lede">Ancient cultures found the nootropic long before supplement stacks existed.</p>
+
+      <h3>What fermentation does</h3>
+      <p>It doesn't just preserve food, it rewrites it — generating molecules absent from the raw ingredient: GABA, antioxidant peptides, anti-inflammatory compounds. Unfermented food cannot replicate this.</p>
+
+      <h3>What it does to your brain</h3>
+      <p>Three effects: lowers cortisol (less chronic stress signalling), supports neuroplasticity, and protects neurons from the oxidative degeneration behind memory loss. Not digestion — the brain's defence system.</p>
+
+      <h3>What the research shows</h3>
+      <p>Across 45 human, animal and cellular studies: reduced stress hormones, improved learning and memory, stabilised brain inflammation, protected neurons from ageing — regardless of whether the food was dairy, soy, rice, garlic, ginseng or vegetables. The benefit is tied to fermentation itself, not the food.</p>
+
+      <h3>The modern diet problem</h3>
+      <p>Fermented food was a daily staple for most of human history — kimchi, kefir, miso, sauerkraut, tempeh, yoghurt — until ultra-processed, pasteurised food quietly replaced it, at exactly the time anxiety, depression and cognitive decline skyrocketed.</p>
+
+      <h3>The protocol</h3>
+      <p>No supplement stack. One daily serving: a spoonful of sauerkraut, live yoghurt, a glass of kefir, kimchi with dinner, miso before a meal. The microbiome begins shifting within 72 hours. The brain follows.</p>
+    </section>
+
+    <section class="fn" id="s04">
+      <div class="fn-num">04</div>
+      <h2>Food Pairing Tips</h2>
+      <p class="lede">Quick combo claims — pair these for the stated effect.</p>
+      <div class="kv">
+        <div class="kv-row"><b>Banana + black pepper</b><span>Detoxes the liver.</span></div>
+        <div class="kv-row"><b>Watermelon + salt</b><span>Reduces stomach fat.</span></div>
+        <div class="kv-row"><b>Coffee + lemon</b><span>Stops a dry cough.</span></div>
+        <div class="kv-row"><b>Salt + tomato</b><span>Clears acne.</span></div>
+        <div class="kv-row"><b>Cinnamon + honey</b><span>Boosts digestion.</span></div>
+      </div>
+    </section>
+
+    <section class="fn" id="s05">
+      <div class="fn-num">05</div>
+      <h2>Nutrient Swaps</h2>
+      <p class="lede">The common food isn't always the richest source — lesser-known options can carry several times the nutrients per serving. Approximate, per typical serving/100g — directional, not exact.</p>
+      <div class="fn-table-wrap">
+        <table class="fn-table">
+          <tr><th>Nutrient</th><th>Common source</th><th>Lesser-known source</th></tr>
+          <tr><td>Potassium</td><td>Banana — 358 mg</td><td>Dried curry leaves — 1,300 mg</td></tr>
+          <tr><td>Vitamin C</td><td>Orange — 53 mg</td><td>Gooseberry — 600 mg</td></tr>
+          <tr><td>Calcium</td><td>Milk — 125 mg</td><td>Moringa leaves — 440 mg</td></tr>
+          <tr><td>Iron</td><td>Spinach — 2.7 mg</td><td>Sesame — 14.6 mg</td></tr>
+          <tr><td>Magnesium</td><td>Almonds — 270 mg</td><td>Pumpkin seeds — 590 mg</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="fn" id="s06">
+      <div class="fn-num">06</div>
+      <h2>Gut–Brain Connection</h2>
+      <p>95% of your serotonin is produced in your gut. The vagus nerve carries signals directly between your digestive system and your brain, in both directions.</p>
+      <p>Fermented foods reshape your microbiome; that reshaped microbiome changes what travels up that nerve. Different bacteria, different signals, different neurochemistry.</p>
+      <p>Every neurotransmitter above has one thing in common: most of it is produced in, or regulated by, the gut. Serotonin, dopamine and GABA all depend on a healthy, diverse gut microbiome to be produced in the quantities the brain needs.</p>
+      <p>Ultra-processed food, chronic stress and poor sleep destroy that microbiome.</p>
+      <blockquote class="fn-quote">Mood isn't just in your head. It starts in your gut.</blockquote>
+    </section>
+
+    <section class="fn" id="s07">
+      <div class="fn-num">07</div>
+      <h2>Sleep Connection</h2>
+      <p>There is one more thing every neurotransmitter above depends on: sleep. Eat to support your chemistry during the day. Then give it the overnight reset it needs.</p>
+      <ul>
+        <li>Serotonin converts to melatonin at night.</li>
+        <li>Dopamine receptors restore their sensitivity during deep sleep.</li>
+        <li>GABA activity is what makes sleep itself possible.</li>
+        <li>Acetylcholine drives the REM cycles where memory consolidates.</li>
+      </ul>
+      <p>The neurochemicals fermented food generates are consolidated during your deepest sleep cycles — deep sleep amplifies everything your gut produces.</p>
+    </section>
+
+    <section class="fn" id="s08">
+      <div class="fn-num">08</div>
+      <h2>Stocks &amp; Investment</h2>
+      <p class="lede">Monthly investment needed to hit a milestone by age 59, at an 8% average return — converted to GBP. $1 ≈ £0.79 — ballpark, not exact, rates move.</p>
+      <div class="fn-table-wrap">
+        <table class="fn-table">
+          <tr><th>Start age</th><th class="num">£250K</th><th class="num">£500K</th><th class="num">£1M</th><th class="num">£2M</th></tr>
+          <tr><td>18</td><td class="num">£52</td><td class="num">£104</td><td class="num">£209</td><td class="num">£417</td></tr>
+          <tr><td>20</td><td class="num">£62</td><td class="num">£123</td><td class="num">£246</td><td class="num">£492</td></tr>
+          <tr><td>25</td><td class="num">£94</td><td class="num">£187</td><td class="num">£375</td><td class="num">£750</td></tr>
+          <tr><td>30</td><td class="num">£145</td><td class="num">£289</td><td class="num">£579</td><td class="num">£1,158</td></tr>
+          <tr><td>35</td><td class="num">£228</td><td class="num">£456</td><td class="num">£912</td><td class="num">£1,823</td></tr>
+          <tr><td>40</td><td class="num">£371</td><td class="num">£742</td><td class="num">£1,484</td><td class="num">£2,968</td></tr>
+          <tr><td>45</td><td class="num">£641</td><td class="num">£1,282</td><td class="num">£2,565</td><td class="num">£5,129</td></tr>
+          <tr><td>50</td><td class="num">£1,255</td><td class="num">£2,509</td><td class="num">£5,018</td><td class="num">£10,036</td></tr>
+          <tr><td>55</td><td class="num">£3,505</td><td class="num">£7,010</td><td class="num">£14,019</td><td class="num">£28,039</td></tr>
+        </table>
+      </div>
+
+      <h3>Mortgage tip: pay it off years early</h3>
+      <ol>
+        <li>Take your monthly mortgage payment (e.g. £1,433).</li>
+        <li>Divide it by 6 (£239).</li>
+        <li>Overpay that amount every month, on top of your normal payment.</li>
+      </ol>
+      <p><b>Example</b> — on a £270k mortgage at 5.4% over 35 years, this pays it off 10 years and 11 months faster, and saves approximately £118,503 in interest.</p>
+
+      <h3>Credit reference agencies (UK)</h3>
+      <p>Three main CRAs hold their own version of your credit file, built from data supplied by banks, lenders, local authorities and courts. A lender may only report to one or two — check all three.</p>
+      <div class="kv">
+        <div class="kv-row"><b>Experian</b><span>Free report &amp; score via the Experian app.</span></div>
+        <div class="kv-row"><b>Equifax</b><span>Free via ClearScore (free for life).</span></div>
+        <div class="kv-row"><b>TransUnion</b><span>Free via Credit Karma (formerly Noddle).</span></div>
+      </div>
+      <p>You have a legal right to see your credit file for free under the Consumer Credit Act 1974 and UK GDPR — you never need to pay for basic access.</p>
+
+      <h3>Debt help (UK, free &amp; impartial)</h3>
+      <p>If debt is piling up, get advice before it snowballs — all free, confidential, and independent of who you owe.</p>
+      <div class="kv">
+        <div class="kv-row"><b>National Debtline</b><span>0808 808 4000 — Mon–Fri 9am–8pm, Sat 9:30am–1pm</span></div>
+        <div class="kv-row"><b>StepChange</b><span>0800 138 1111 — Mon–Fri 8am–8pm, Sat 8am–4pm</span></div>
+        <div class="kv-row"><b>Citizens Advice</b><span>0800 144 8848 — Mon–Fri 8am–7pm</span></div>
+        <div class="kv-row"><b>PayPlan</b><span>0800 280 2816 — Mon–Fri 8am–8pm, Sat 9am–3pm</span></div>
+        <div class="kv-row"><b>MoneyHelper</b><span>moneyhelper.org.uk — government-backed, free guidance</span></div>
+      </div>
+      <blockquote class="fn-quote">Never pay for debt advice when free, regulated options like these exist.</blockquote>
+    </section>
+
+    <section class="fn" id="s09">
+      <div class="fn-num">09</div>
+      <h2>Protocols</h2>
+      <p class="lede">Step-by-step releases and drills — not just facts to know, things to do.</p>
+
+      <h3>The psoas release — "muscle of the soul"</h3>
+      <p>The psoas is the deepest core muscle, running from the lumbar spine through the pelvis to the femur — the bridge between upper and lower body, linking your diaphragm to your pelvis and your body to your emotions.</p>
+      <p>Under stress it's first to contract, and over time it stays shortened, storing tension and emotional memory. A tight psoas is linked to chronic lower back pain, hip stiffness, shallow breathing and anxiety. Releasing it doesn't just free a muscle — it calms the entire system.</p>
+      <blockquote class="fn-quote">You don't stretch the psoas, you release it.</blockquote>
+      <ol>
+        <li>Lie on your back with knees bent and feet flat.</li>
+        <li>Place a soft ball (or fist) just inside your hip bone on one side.</li>
+        <li>Take slow, deep breaths into your belly for 1–2 minutes.</li>
+        <li>Let the tension melt as your breath deepens.</li>
+        <li>Switch sides.</li>
+      </ol>
+      <p>You should feel subtle pressure and release — never sharp pain. When the psoas relaxes: movement improves, digestion normalizes, circulation increases, healing accelerates.</p>
+
+      <h3>Legs up the wall (Viparita Karani)</h3>
+      <p class="lede">Five minutes. The simplest pose in yoga — and one of the most underrated tools your body has access to.</p>
+      <div class="kv">
+        <div class="kv-row"><b>Nervous system</b><span>Elevating the legs above the heart activates the parasympathetic nervous system within 90 seconds — heart rate drops, cortisol falls.</span></div>
+        <div class="kv-row"><b>Blood</b><span>Gravity reverses pooled blood and lymph flow from the legs back toward the heart — circulation improves.</span></div>
+        <div class="kv-row"><b>Spine</b><span>The lumbar spine decompresses and tension around it dissolves. Most lower back pain is compression — this reverses it.</span></div>
+        <div class="kv-row"><b>Brain</b><span>Inverted positions increase blood flow to the brain within minutes — headaches ease, fog clears, anxiety drops.</span></div>
+        <div class="kv-row"><b>Recovery</b><span>Done 10 minutes before bed, cortisol drops and melatonin rises — the body shifts from doing to healing.</span></div>
+      </div>
+      <ol>
+        <li>Sit sideways against a wall.</li>
+        <li>Swing your legs up the wall as you lie back.</li>
+        <li>Let your arms fall open.</li>
+        <li>Close your eyes.</li>
+        <li>Hold for 5–10 minutes.</li>
+      </ol>
+
+      <h3>The deep sleep drink</h3>
+      <p>A simple bedtime mix some find helps with night awakenings, racing thoughts, and fragmented sleep.</p>
+      <ol>
+        <li>1 tsp honey</li>
+        <li>A pinch of sea salt</li>
+        <li>1 tsp coconut oil</li>
+        <li>Mix into warm water</li>
+        <li>Drink before bed</li>
+      </ol>
+      <div class="fn-note">
+        Who it tends to help — people who wake between 2–4am, feel wired at night, crash from sugar swings, feel anxious before bed, or have an irregular sleep schedule.
+        <br><br>
+        <b>Honest caveat:</b> no large clinical trials prove this cures insomnia. It's a supportive tool, not medicine. Consistent bedtime, less screen light, managed stress, daily movement, good nutrition and less late caffeine matter more. Lifestyle beats hacks.
+      </div>
+
+      <h3>The bedtime pumpkin latte</h3>
+      <p>A warm, caffeine-free pumpkin latte before bed — the same "warm drink, calm signal" principle as the deep sleep drink.</p>
+      <ol>
+        <li>Warm a cup of milk (dairy or plant-based) over low heat.</li>
+        <li>Stir in 1–2 tbsp pumpkin purée.</li>
+        <li>Add a dash of pumpkin spice (cinnamon, nutmeg, ginger, clove).</li>
+        <li>Sweeten with a little honey or maple syrup, to taste.</li>
+        <li>Froth or whisk, and drink about 30–60 minutes before bed.</li>
+      </ol>
+    </section>
+
+    <section class="fn" id="s10">
+      <div class="fn-num">10</div>
+      <h2>Fat Loss Science</h2>
+      <p class="lede">The Cut Code: how bodyfat actually gets used in a caloric deficit — a deficit creates the demand, but fat still has to be released.</p>
+
+      <h3>The chain</h3>
+      <p>Deficit → open storage → cleave fat → release into blood → use for energy. Fat loss begins when stored energy becomes available — not when the deficit starts.</p>
+
+      <h3>How fat is packaged</h3>
+      <p>Stored bodyfat sits inside fat cells as triglycerides: one glycerol backbone plus three fatty acids. The body can't burn the whole package as-is — it has to unpack it first.</p>
+
+      <h3>Getting the signal</h3>
+      <p>The body tells the fat cell to open storage via catecholamine signaling, lower insulin tone, exercise demand, energy demand, natriuretic peptide signaling, and growth hormone context.</p>
+
+      <h3>Lipolysis — the cleaving step</h3>
+      <p>Triglyceride → (ATGL) → diglyceride → (HSL) → monoglyceride → (MGL) → fatty acids + glycerol. Fat has to be cleaved before it can move.</p>
+
+      <h3>"Fat loss drugs" do not skip the chain</h3>
+      <p>Clenbuterol pushes adrenergic signaling; growth hormone can support lipolysis. But releasing more fat isn't the same as losing more fat. A 14-day human trial on clenbuterol found metabolic rate increased but body composition did not change, with side effects including tremor, cramps, restlessness/anxiety and headache.</p>
+
+      <h3>You don't force fat out, you bias the conditions</h3>
+      <div class="kv">
+        <div class="kv-row"><b>Bias open</b><span>A controlled deficit, movement and training demand, better insulin sensitivity, enough sleep, manageable stress, consistent daily output.</span></div>
+        <div class="kv-row"><b>Bias closed</b><span>Constantly being fed, poor insulin sensitivity, low movement, poor sleep, high stress load, crash dieting, poor recovery.</span></div>
+      </div>
+      <blockquote class="fn-quote">The goal is to create conditions where fat release makes sense.</blockquote>
+      <p>Released fat is not burned fat — fatty acids still have to be transported, delivered to tissue, taken into cells, moved toward oxidation, and used for energy.</p>
+    </section>
+
+    <section class="fn" id="s11">
+      <div class="fn-num">11</div>
+      <h2>Food Prep Tips</h2>
+      <p class="lede">Small upgrades to food you already eat — none of them cost more effort.</p>
+      <h3>Eggs: don't waste the nutrients</h3>
+      <div class="kv">
+        <div class="kv-row"><b>Keep the yolk soft</b><span>High heat damages delicate nutrients in the yolk — poach, soft-boil, or cook over easy instead.</span></div>
+        <div class="kv-row"><b>Watch the fat</b><span>Cheap oils oxidize in a hot pan; butter, ghee or avocado oil handle heat far better.</span></div>
+        <div class="kv-row"><b>Buy pasture-raised</b><span>Hens eating bugs and grass lay eggs with meaningfully more omega-3s than caged hens.</span></div>
+        <div class="kv-row"><b>Check the yolk color</b><span>Deep orange means more omega-3s and nutrients; pale washed-out yellow means far fewer.</span></div>
+      </div>
+      <blockquote class="fn-quote">Three or four eggs, cooked gently, yolk soft, in butter or avocado oil, pasture-raised if you can get them. Same breakfast, far more out of it.</blockquote>
+    </section>
+
+    <section class="fn" id="s12">
+      <div class="fn-num">12</div>
+      <h2>Household &amp; Environmental Swaps</h2>
+      <p class="lede">Everyday items that may be quietly increasing disease risk. None will harm you from a single exposure — the risk is cumulative.</p>
+      <div class="fn-table-wrap">
+        <table class="fn-table">
+          <tr><th>Item</th><th>The issue</th><th>Swap</th></tr>
+          <tr><td>Ultra-processed foods</td><td>Additives, emulsifiers and oxidised seed oils drive inflammation &amp; oxidative stress.</td><td>Whole, single-ingredient foods.</td></tr>
+          <tr><td>Plastic containers</td><td>Heating/storing food in plastic can leach BPA and phthalates.</td><td>Glass or stainless steel containers.</td></tr>
+          <tr><td>Non-stick pans</td><td>Older cookware can release PFAS ("forever chemicals") when heated.</td><td>Cast iron, stainless steel, or ceramic.</td></tr>
+          <tr><td>Aluminium foil</td><td>Acidic/salty foods can pull aluminium into food.</td><td>Parchment paper or glass baking dishes.</td></tr>
+          <tr><td>Refined cooking oils</td><td>Canola, soybean and vegetable oils oxidise easily when heated.</td><td>Cold-pressed olive oil, avocado oil, grass-fed butter.</td></tr>
+          <tr><td>Canned food</td><td>Many can linings still contain BPA or similar chemicals.</td><td>Glass-jarred alternatives or fresh whole foods.</td></tr>
+          <tr><td>Scented candles</td><td>Paraffin wax plus synthetic fragrance can emit benzene and toluene.</td><td>Beeswax or coconut wax candles with essential oils.</td></tr>
+          <tr><td>Plastic chopping boards</td><td>Every knife cut sheds microplastics directly into food.</td><td>Wooden or bamboo boards.</td></tr>
+        </table>
+      </div>
+      <blockquote class="fn-quote">None of these items will harm you in a single exposure. The risk is cumulative — the same sources, repeated daily, for years. Start with one. Then another.</blockquote>
+    </section>
+
+    <section class="fn" id="s13">
+      <div class="fn-num">13</div>
+      <h2>Bloodwork &amp; Biomarkers</h2>
+      <h3>Homocysteine: the marker most panels miss</h3>
+      <p>Homocysteine is an amino acid that builds up in your blood when methylation slows down. When it climbs, it's been linked to real damage to your arteries and brain — yet it's rarely on a standard panel.</p>
+      <p><b>Why it matters</b> — up to 60% of the population carries a gene variant (MTHFR) that can reduce how well they clear homocysteine. Most have no idea, because their standard panel looks completely normal.</p>
+      <p><b>The gap that gets missed</b> — optimal homocysteine is around 7 or below, but most labs only flag it above 15. That gap is exactly where quiet damage can build while the report still says "normal."</p>
+      <p>Dozens of the most important markers work like this: a "normal" range and an optimal range that aren't the same.</p>
+      <blockquote class="fn-quote">Ask specifically for a homocysteine test — it isn't automatic. And for any bloodwork marker, ask what the optimal range is, not just whether you fall inside "normal."</blockquote>
+    </section>
+
+    <section class="fn" id="s14">
+      <div class="fn-num">14</div>
+      <h2>Vitamins</h2>
+      <h3>Vitamin B12 (Cobalamin)</h3>
+      <p>Deficiency symptoms include breathlessness, pale skin, tingling and numbness, and loss of energy and weakness.</p>
+      <p>Found in animal products — meat, fish, cheese — and fortified cereal; not found in virtually all vegetables, so strict vegetarians and vegans may be at higher risk of deficiency.</p>
+      <p>To be absorbed, B12 needs to be extracted from food by <b>intrinsic factor</b>, a protein produced by the stomach's parietal cells. Reduced intrinsic factor causes deficiency and a condition called pernicious anaemia. Crohn's and coeliac disease can also lead to B12 deficiency.</p>
+      <h3>Vitamin D</h3>
+      <p>The "sunshine vitamin" comes in two forms: D2, found in food, and D3, formed when cholesterol in the skin reacts to UV light — which makes D3 technically a steroid hormone.</p>
+      <p>Vitamin D is essential for absorbing calcium and phosphorus, and supports immune function, muscle contraction, heart function and blood pressure regulation. A lack of it can lead to rickets in children and osteoporosis in adults.</p>
+    </section>
+
+    <section class="fn" id="s15">
+      <div class="fn-num">15</div>
+      <h2>Peptides</h2>
+      <div class="fn-note">
+        <b>Educational reference only, not medical advice.</b> Legality and regulatory status vary by country and by compound — several named below are prescription medications, others are early-stage research compounds with limited long-term human data. Talk to a qualified physician before using any peptide.
+      </div>
+
+      <h3>Peptides vs. pharmaceuticals: the difference</h3>
+      <p><b>Mechanically</b> — steroids are cholesterol-derived hormones that pass into cells and change gene expression; they tend to force physiology. Peptides are amino acid chains that bind receptors and trigger signaling cascades; they tend to guide physiology.</p>
+      <p><b>In approach</b> — pharmaceuticals largely manage downstream damage: wait until something breaks, then blunt the signal. Peptides operate upstream, at the level of cellular communication.</p>
+      <p><b>Why they're growing</b> — the peptide therapeutics market was valued at $42.8 billion in 2023, projected to hit $106 billion by 2033 (10.8% CAGR).</p>
+      <p><b>Why "side effects" happen</b> — usually not because peptides are inherently dangerous, but because the protocol is wrong: dose too high too fast, wrong timing, no cycling, no foundation, poor product quality.</p>
+
+      <h3>Myths, debunked</h3>
+      <div class="kv">
+        <div class="kv-row"><b>Are steroids</b><span>False — different class, different mechanism.</span></div>
+        <div class="kv-row"><b>Unsafe / illegal</b><span>Neither is a blanket truth. Some are FDA-approved with strong safety data; others are early research compounds. The real danger is ignorance plus bad sourcing.</span></div>
+        <div class="kv-row"><b>No scientific basis</b><span>Peptides are among the most studied categories in metabolic, immune and endocrine medicine — GLP-1 drugs are peptide-based.</span></div>
+        <div class="kv-row"><b>Cause cancer / bodybuilders only</b><span>No conclusive evidence therapeutic peptides universally cause cancer. Used in metabolic health, immune regulation, injury recovery, cognition, performance and longevity.</span></div>
+        <div class="kv-row"><b>Ineffective / severe side effects</b><span>Most "doesn't work" stories trace to low-quality product, random dosing, no cycling.</span></div>
+        <div class="kv-row"><b>Quick fix</b><span>They don't replace sleep, nutrition, stress control or training.</span></div>
+      </div>
+
+      <h3>The peptide toolbox, by category</h3>
+      <div class="kv">
+        <div class="kv-row"><b>Injury repair &amp; healing</b><span>BPC-157, TB-500, KPV, GLOW (BPC-157 + TB-500 + GHK-Cu)</span></div>
+        <div class="kv-row"><b>Immune modulation</b><span>Thymosin Alpha-1 (Thymalfasin), Low Dose Naltrexone (LDN)</span></div>
+        <div class="kv-row"><b>Brain, mood, sleep, libido</b><span>Semax, Selank, Dihexa, DSIP, PT-141 (Bremelanotide), Melanotan 2, GHK-Cu, AHK-Cu, Snap-8, HCG, Enclomiphene, Kisspeptin, Glutathione</span></div>
+      </div>
+
+      <h3>Spotlight: GHK-Cu, the copper peptide</h3>
+      <p>Copper sits at the core of enzymes involved in collagen production, antioxidant defenses, and mitochondrial metabolism. Natural GHK-Cu levels decline with age, falling over 50% between ages 20 and 60.</p>
+      <p><b>The catch</b> — you can't just give the body free copper; free copper ions can accelerate oxidative stress and cellular aging. GHK-Cu solves this: the tripeptide acts as a molecular chaperone that safely carries copper into cells, releasing it exactly where needed.</p>
+      <div class="fn-note">
+        <b>Sourcing note:</b> as with any research chemical supplier, verify current batch certificates of analysis (COA) and third-party testing before use.
+      </div>
+    </section>
+
+    <section class="fn" id="s16">
+      <div class="fn-num">16</div>
+      <h2>Brain Rewiring Habits</h2>
+      <p class="lede">Small, slightly odd daily habits — each tied to a specific mechanism, not just a vibe.</p>
+      <div class="kv">
+        <div class="kv-row"><b>Chew gum studying</b><span>May improve memory, focus and reduce stress — mild sensory stimulation keeps the brain alert.</span></div>
+        <div class="kv-row"><b>Name your inner critic</b><span>Naming your negative inner voice can make it feel less powerful and easier to manage.</span></div>
+        <div class="kv-row"><b>Pre-sleep gratitude</b><span>Thank something that hasn't happened yet, as if it's already real — improves sleep and well-being.</span></div>
+        <div class="kv-row"><b>Hot-to-cold shower</b><span>A rush of dopamine and norepinephrine leaves you happier, more alert and focused.</span></div>
+        <div class="kv-row"><b>3 minutes of silence</b><span>Eyes closed, focused on your body — reduces stress, improves mental clarity.</span></div>
+        <div class="kv-row"><b>Reflect on inspiration</b><span>Your brain unconsciously copies what you see — surround yourself with people living what you want.</span></div>
+        <div class="kv-row"><b>Mirror affirmations</b><span>Speak to yourself as your best version — strengthens self-image and shapes future actions.</span></div>
+        <div class="kv-row"><b>Learn a word daily</b><span>Creates new neural connections — use it in a sentence or write it down.</span></div>
+        <div class="kv-row"><b>Stand 10 min/hour</b><span>Sitting too long harms circulation and weakens thinking; standing improves alertness.</span></div>
+        <div class="kv-row"><b>Cold water on face</b><span>Boosts norepinephrine, wakes the nervous system, sharpens clarity like a mini reset.</span></div>
+        <div class="kv-row"><b>Yawn for 2 minutes</b><span>Even a forced yawn releases dopamine and endorphins — recharges the brain.</span></div>
+        <div class="kv-row"><b>Draw instead of write</b><span>Boosts creativity and reduces stress — even doodles strengthen problem-solving.</span></div>
+      </div>
+    </section>
+
+    <section class="fn" id="s17">
+      <div class="fn-num">17</div>
+      <h2>Sayings</h2>
+      <div class="say">
+        Every high has a come down.<br>Addiction makes sure of it.
+        <cite>— Elliott Wald</cite>
+      </div>
+      <div class="say">
+        Those with the biggest hearts are those that escape the <span>fire</span> but return with water for those still in it.
+      </div>
+    </section>
+
+    <p class="fn-foot">Trap to Fire — field notes, compiled for reference. Sources credited per section.<br>Not medical, financial, or professional advice — for education only.</p>
+  </div>
+</body>
+</html>
