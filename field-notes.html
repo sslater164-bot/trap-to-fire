@@ -104,6 +104,15 @@
   .fs-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:6px;}
   @media(min-width:520px){.fs-grid{grid-template-columns:repeat(3,1fr);}}
   .fs-grid img{width:100%; aspect-ratio:1080/1270; object-fit:contain; border-radius:12px; border:1px solid var(--line); background:var(--panel2);}
+
+  .recipe-pair{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:8px 0 22px;}
+  .recipe-pair img{width:100%; border-radius:12px; border:1px solid var(--line); background:var(--panel2); display:block;}
+  section.fn h3.recipe-name{color:var(--flame); margin-top:22px;}
+  section.fn h3.recipe-name:first-of-type{margin-top:6px;}
+
+  .ks-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:6px;}
+  @media(min-width:520px){.ks-grid{grid-template-columns:repeat(4,1fr);}}
+  .ks-grid img{width:100%; border-radius:12px; border:1px solid var(--line); background:var(--panel2);}
 </style>
 </head>
 <body>
@@ -135,6 +144,9 @@
       <a href="#s16"><b>16</b>Brain Rewiring</a>
       <a href="#s17"><b>17</b>Sayings</a>
       <a href="#s18"><b>18</b>Food for Symptoms</a>
+      <a href="#s19"><b>19</b>Recipes</a>
+      <a href="#s20"><b>20</b>Breakfast Ideas</a>
+      <a href="#s21"><b>21</b>Kitchen Science Hacks</a>
     </nav>
 
     <section class="fn" id="s01">
@@ -409,6 +421,14 @@
       </div>
       <blockquote class="fn-quote">The goal is to create conditions where fat release makes sense.</blockquote>
       <p>Released fat is not burned fat — fatty acids still have to be transported, delivered to tissue, taken into cells, moved toward oxidation, and used for energy.</p>
+
+      <h3>Body recomposition: the three conditions</h3>
+      <p>Muscle and fat usually move in the same direction — but three conditions consistently break that pattern in controlled trials, letting you build muscle and lose fat at the same time. Remove any one and the effect collapses.</p>
+      <div class="kv">
+        <div class="kv-row"><b>Moderate deficit</b><span>Roughly 250–500 calories below maintenance — slow enough to lose 0.5–1% of bodyweight per week.</span></div>
+        <div class="kv-row"><b>High protein</b><span>At least 1g per pound of bodyweight, with the strongest results near 1.2g/lb (2.2–2.6g per kg).</span></div>
+        <div class="kv-row"><b>Progressive resistance training</b><span>3–4 sessions a week minimum, with the load increasing over time.</span></div>
+      </div>
     </section>
 
     <section class="fn" id="s11">
@@ -555,6 +575,119 @@
         <img src="assets/field-notes/food-symptom-10.jpg" alt="Brain fog? Eat blueberries." loading="lazy">
         <img src="assets/field-notes/food-symptom-11.jpg" alt="Weak bones? Drink milk." loading="lazy">
         <img src="assets/field-notes/food-symptom-12.jpg" alt="Bloating? Eat ginger." loading="lazy">
+      </div>
+    </section>
+
+    <section class="fn" id="s19">
+      <div class="fn-num">19</div>
+      <h2>Recipes</h2>
+      <p class="lede">High-protein dinners, ingredients + method on the left, the finished plate on the right.</p>
+
+      <h3 class="recipe-name">Honey Garlic Chicken Thighs</h3>
+      <div class="recipe-pair">
+        <img src="assets/field-notes/recipes/honeygarlic-text.jpg" alt="Honey Garlic Chicken Thighs ingredients and method" loading="lazy">
+        <img src="assets/field-notes/recipes/honeygarlic-photo.jpg" alt="Honey Garlic Chicken Thighs finished plate" loading="lazy">
+      </div>
+
+      <h3 class="recipe-name">Smash Burger Bowls with Special Sauce</h3>
+      <div class="recipe-pair">
+        <img src="assets/field-notes/recipes/smashburger-text.jpg" alt="Smash Burger Bowls ingredients and method" loading="lazy">
+        <img src="assets/field-notes/recipes/smashburger-photo.jpg" alt="Smash Burger Bowls finished plate" loading="lazy">
+      </div>
+
+      <h3 class="recipe-name">Creamy Tuscan Salmon with Orzo</h3>
+      <div class="recipe-pair">
+        <img src="assets/field-notes/recipes/tuscansalmonorzo-text.jpg" alt="Creamy Tuscan Salmon with Orzo ingredients and method" loading="lazy">
+        <img src="assets/field-notes/recipes/tuscansalmonorzo-photo.jpg" alt="Creamy Tuscan Salmon with Orzo finished plate" loading="lazy">
+      </div>
+
+      <h3 class="recipe-name">Sticky Beef Noodles with Broccoli</h3>
+      <div class="recipe-pair">
+        <img src="assets/field-notes/recipes/stickybeef-text.jpg" alt="Sticky Beef Noodles ingredients and method" loading="lazy">
+        <img src="assets/field-notes/recipes/stickybeef-photo.jpg" alt="Sticky Beef Noodles finished plate" loading="lazy">
+      </div>
+
+      <h3 class="recipe-name">Crispy Chicken Parmesan with Spaghetti</h3>
+      <div class="recipe-pair">
+        <img src="assets/field-notes/recipes/chickenparm-text.jpg" alt="Crispy Chicken Parmesan ingredients and method" loading="lazy">
+        <img src="assets/field-notes/recipes/chickenparm-photo.jpg" alt="Crispy Chicken Parmesan finished plate" loading="lazy">
+      </div>
+
+      <h3 class="recipe-name">Cajun Prawn &amp; Sausage Rice Skillet</h3>
+      <div class="recipe-pair">
+        <img src="assets/field-notes/recipes/cajunshrimp-text.jpg" alt="Cajun Prawn and Sausage Rice Skillet ingredients and method" loading="lazy">
+        <img src="assets/field-notes/recipes/cajunshrimp-photo.jpg" alt="Cajun Prawn and Sausage Rice Skillet finished plate" loading="lazy">
+      </div>
+
+      <h3 class="recipe-name">Slow-Cooked Pulled Pork Tacos</h3>
+      <div class="recipe-pair">
+        <img src="assets/field-notes/recipes/pulledpork-text.jpg" alt="Slow-Cooked Pulled Pork Tacos ingredients and method" loading="lazy">
+        <img src="assets/field-notes/recipes/pulledpork-photo.jpg" alt="Slow-Cooked Pulled Pork Tacos finished plate" loading="lazy">
+      </div>
+
+      <h3 class="recipe-name">Marry Me Chicken</h3>
+      <div class="recipe-pair">
+        <img src="assets/field-notes/recipes/marrymechicken-text.jpg" alt="Marry Me Chicken ingredients and method" loading="lazy">
+        <img src="assets/field-notes/recipes/marrymechicken-photo.jpg" alt="Marry Me Chicken finished plate" loading="lazy">
+      </div>
+
+      <h3 class="recipe-name">Chicken Shawarma Wraps with Garlic Yogurt Sauce</h3>
+      <div class="recipe-pair">
+        <img src="assets/field-notes/recipes/shawarma-text.jpg" alt="Chicken Shawarma Wraps ingredients and method" loading="lazy">
+        <img src="assets/field-notes/recipes/shawarma-photo.jpg" alt="Chicken Shawarma Wraps finished plate" loading="lazy">
+      </div>
+
+      <h3 class="recipe-name">Loaded Burger Bowl with Crispy Potatoes</h3>
+      <div class="recipe-pair">
+        <img src="assets/field-notes/recipes/loadedburger-text.jpg" alt="Loaded Burger Bowl ingredients and method" loading="lazy">
+        <img src="assets/field-notes/recipes/loadedburger-photo.jpg" alt="Loaded Burger Bowl finished plate" loading="lazy">
+      </div>
+
+      <h3 class="recipe-name">Creamy Tuscan Salmon with Rice</h3>
+      <div class="recipe-pair">
+        <img src="assets/field-notes/recipes/tuscansalmonrice-text.jpg" alt="Creamy Tuscan Salmon with Rice ingredients and method" loading="lazy">
+        <img src="assets/field-notes/recipes/tuscansalmonrice-photo.jpg" alt="Creamy Tuscan Salmon with Rice finished plate" loading="lazy">
+      </div>
+
+      <h3 class="recipe-name">Smothered Chicken with Buttery Mash &amp; Green Beans</h3>
+      <div class="recipe-pair">
+        <img src="assets/field-notes/recipes/smotheredchicken-text.jpg" alt="Smothered Chicken with Buttery Mash and Green Beans ingredients and method" loading="lazy">
+        <img src="assets/field-notes/recipes/smotheredchicken-photo.jpg" alt="Smothered Chicken with Buttery Mash and Green Beans finished plate" loading="lazy">
+      </div>
+
+      <h3 class="recipe-name">Crispy Bang Bang Chicken Rice Bowl</h3>
+      <div class="recipe-pair">
+        <img src="assets/field-notes/recipes/bangbang-text.jpg" alt="Crispy Bang Bang Chicken Rice Bowl ingredients and method" loading="lazy">
+        <img src="assets/field-notes/recipes/bangbang-photo.jpg" alt="Crispy Bang Bang Chicken Rice Bowl finished plate" loading="lazy">
+      </div>
+    </section>
+
+    <section class="fn" id="s20">
+      <div class="fn-num">20</div>
+      <h2>Breakfast Ideas</h2>
+      <p class="lede">Five quick breakfasts built around eggs, plus why eggs earn the "superfood" label.</p>
+      <div class="fs-grid">
+        <img src="assets/field-notes/breakfast/breakfast1.jpg" alt="Breakfast idea: scrambled eggs, avocado, tomatoes" loading="lazy">
+        <img src="assets/field-notes/breakfast/breakfast3.jpg" alt="Breakfast idea: soft-boiled egg and toast" loading="lazy">
+        <img src="assets/field-notes/breakfast/breakfast4.jpg" alt="Breakfast idea: shakshuka" loading="lazy">
+        <img src="assets/field-notes/breakfast/breakfast5.jpg" alt="Breakfast idea: egg muffins" loading="lazy">
+        <img src="assets/field-notes/breakfast/eggsuperfood.jpg" alt="Why eggs are a superfood" loading="lazy">
+      </div>
+    </section>
+
+    <section class="fn" id="s21">
+      <div class="fn-num">21</div>
+      <h2>Kitchen Science Hacks</h2>
+      <p class="lede">Small prep changes with an outsized effect on nutrients, digestion and inflammation.</p>
+      <div class="ks-grid">
+        <img src="assets/field-notes/kitchen-science/ks01-soakrice.jpg" alt="Soak rice for 30 minutes to remove arsenic and starch" loading="lazy">
+        <img src="assets/field-notes/kitchen-science/ks02-marinatechicken.jpg" alt="Marinate chicken in lemon juice for 20 minutes before grilling" loading="lazy">
+        <img src="assets/field-notes/kitchen-science/ks03-lemonavocado.jpg" alt="Drizzle lemon on avocado to prevent oxidation" loading="lazy">
+        <img src="assets/field-notes/kitchen-science/ks04-frozenginger.jpg" alt="Grate frozen ginger for more gingerol" loading="lazy">
+        <img src="assets/field-notes/kitchen-science/ks05-freezegarlic.jpg" alt="Freeze garlic before cooking to triple allicin" loading="lazy">
+        <img src="assets/field-notes/kitchen-science/ks06-bakingsoda.jpg" alt="Add baking soda to beans" loading="lazy">
+        <img src="assets/field-notes/kitchen-science/ks07-tomatoesoliveoil.jpg" alt="Cook tomatoes in olive oil for better lycopene absorption" loading="lazy">
+        <img src="assets/field-notes/kitchen-science/ks08-steambroccoli.jpg" alt="Steam broccoli for 4 minutes to preserve sulforaphane" loading="lazy">
       </div>
     </section>
 
