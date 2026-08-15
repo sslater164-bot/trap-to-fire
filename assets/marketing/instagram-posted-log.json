@@ -33,7 +33,8 @@
     "traptofire-31.jpg",
     "traptofire-32.jpg",
     "traptofire-33.jpg",
-    "traptofire-34.jpg"
+    "traptofire-34.jpg",
+    "traptofire-35.jpg"
   ],
   "notes": "Tracks which assets/tips/*.jpg files have already been posted to @traptofire12. The daily posting routine reads this, picks the next un-posted file (in order), posts it, then appends it here and pushes the update. Marketing assets (ad-hero.jpg, ad-streak.jpg, ad-tip.jpg, reel-launch.mp4, reel-tips.mp4) were posted separately during the initial 5-day launch batch (Aug 4-8, 2026) and are not tracked in this file."
 }
