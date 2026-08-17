@@ -47,7 +47,8 @@
   ],
   "tips_exhausted": true,
   "fallback_share_history": [
-    "reel-tips.mp4"
+    "reel-tips.mp4",
+    "reel-launch.mp4"
   ],
   "notes": "Tracks which assets/tips/*.jpg files have already been posted to @traptofire12. The daily posting routine reads this, picks the next un-posted file (in order), posts it, then appends it here and pushes the update. All 44 tip files were exhausted as of 2026-08-16 20:05 UTC (tips_exhausted: true) -- the routine now falls back to re-sharing assets from assets/marketing/ads/ and assets/marketing/reels/ (5 total: ad-hero.jpg, ad-streak.jpg, ad-tip.jpg, reel-launch.mp4, reel-tips.mp4), tracked in fallback_share_history (most recent last). Each cycle should pick the least-recently-shared fallback asset and never repeat the same file two runs in a row. New tip content dropped into assets/tips/ should resume normal posting (set tips_exhausted back to false once new files exist beyond traptofire-44.jpg)."
 }
