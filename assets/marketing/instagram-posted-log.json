@@ -78,9 +78,10 @@
     "traptofire-76.jpg",
     "traptofire-77.jpg",
     "traptofire-78.jpg",
-    "traptofire-79.jpg"
+    "traptofire-79.jpg",
+    "traptofire-80.jpg"
   ],
-  "tips_exhausted": false,
+  "tips_exhausted": true,
   "fallback_share_history": [
     "reel-tips.mp4",
     "reel-launch.mp4",
