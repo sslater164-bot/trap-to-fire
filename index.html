@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0F0E0D">
 <title>Trap to Fire — Mind · Body · Money</title>
 <meta property="og:title" content="Trap to Fire — Mind · Body · Money">
-<meta property="og:description" content="Escape the trap. Build the fire. The daily discipline app for men.">
+<meta property="og:description" content="Escape the trap. Build the fire. The daily discipline app for men — open it now.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/icons/icon-512.png">
 <link rel="manifest" href="manifest.json">
@@ -53,6 +53,15 @@
   .foot{color:var(--mute); font-size:11px; margin-top:22px; line-height:1.6;}
   .foot b{color:var(--off);}
 
+  .pillars{margin:24px 0 4px; text-align:left; display:flex; flex-direction:column; gap:10px;}
+  .pillar{
+    display:flex; gap:12px; align-items:flex-start; padding:14px 16px; border-radius:14px;
+    background:var(--panel); border:1px solid var(--line);
+  }
+  .pillar .pico{font-size:22px; line-height:1.2;}
+  .pillar h3{font-family:'Anton',sans-serif; font-weight:400; font-size:13.5px; letter-spacing:0.5px; text-transform:uppercase; color:var(--flame); margin-bottom:3px;}
+  .pillar p{color:var(--mute); font-size:12.5px; line-height:1.45;}
+
   .tips{margin:26px 0 8px; text-align:left;}
   .tips h2{font-family:'Anton',sans-serif; font-weight:400; font-size:15px; letter-spacing:1px; text-transform:uppercase; color:var(--flame); margin:0 0 10px 2px;}
   .tips-track{
@@ -65,7 +74,7 @@
     border-radius:14px; border:1px solid var(--line); scroll-snap-align:center;
     background:var(--panel);
   }
-  .tips-dots{display:flex; justify-content:center; gap:6px; margin-top:4px;}
+  .tips-dots{display:flex; justify-content:center; gap:6px; margin-top:4px; flex-wrap:wrap;}
   .tips-dots span{width:6px; height:6px; border-radius:50%; background:var(--line);}
   .tips-dots span.active{background:var(--ember);}
 
@@ -95,7 +104,24 @@
     <div class="tag">Mind · Body · Money</div>
     <p class="sub">Escape the trap. Build the fire.<br>The daily discipline app for men.</p>
 
-    <div class="badge">🚧 Launching soon</div>
+    <div class="badge">🔥 New tools dropped 6x a day</div>
+
+    <a class="btn primary" data-track="open_app" href="https://codex-critique-craft.lovable.app" target="_blank" rel="noopener">🔥 Open The App</a>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pico">🧠</div>
+        <div><h3>Mind</h3><p>Daily exercises to rewire discipline — journaling, focus drills, and the mental reps most men skip.</p></div>
+      </div>
+      <div class="pillar">
+        <div class="pico">💪</div>
+        <div><h3>Body</h3><p>Straight-talk nutrition and training tips — what actually moves the needle, no fluff.</p></div>
+      </div>
+      <div class="pillar">
+        <div class="pico">💰</div>
+        <div><h3>Money</h3><p>The same discipline that builds your body builds your bank account. One system, three fronts.</p></div>
+      </div>
+    </div>
 
     <div class="streak" id="streakBox">
       <div class="streak-num" id="streakNum">0<span>day streak</span></div>
@@ -104,7 +130,7 @@
       <div class="streak-best" id="streakBest"></div>
     </div>
 
-    <a class="btn primary" data-track="get_early_access" href="mailto:sslater164@gmail.com?subject=Trap%20to%20Fire%20-%20early%20access">🔥 Get Early Access</a>
+    <a class="btn" data-track="get_in_touch" href="mailto:sslater164@gmail.com?subject=Trap%20to%20Fire%20-%20question">📩 Questions? Get In Touch</a>
 
     <a class="btn gold" data-track="gc_peptides" href="https://gcpeptides.com" target="_blank" rel="noopener"><span class="ico">💊</span> GC Peptides — 20% off inside</a>
     <a class="btn" data-track="tunit" href="https://transformationtunit247.co.uk" target="_blank" rel="noopener"><span class="ico">💪</span> TUNIT — Transformation 24/7</a>
@@ -112,50 +138,28 @@
     <div class="tips">
       <h2>Daily Discipline Tips</h2>
       <div class="tips-track" id="tipsTrack">
-        <img src="assets/tips/traptofire-01.jpg" alt="Trap to Fire daily discipline tip 1" loading="lazy">
-        <img src="assets/tips/traptofire-02.jpg" alt="Trap to Fire daily discipline tip 2" loading="lazy">
-        <img src="assets/tips/traptofire-03.jpg" alt="Trap to Fire daily discipline tip 3" loading="lazy">
-        <img src="assets/tips/traptofire-04.jpg" alt="Trap to Fire daily discipline tip 4" loading="lazy">
-        <img src="assets/tips/traptofire-05.jpg" alt="Trap to Fire daily discipline tip 5" loading="lazy">
-        <img src="assets/tips/traptofire-06.jpg" alt="Trap to Fire daily discipline tip 6" loading="lazy">
-        <img src="assets/tips/traptofire-07.jpg" alt="Trap to Fire daily discipline tip 7" loading="lazy">
-        <img src="assets/tips/traptofire-08.jpg" alt="Trap to Fire daily discipline tip 8" loading="lazy">
-        <img src="assets/tips/traptofire-09.jpg" alt="Trap to Fire daily discipline tip 9" loading="lazy">
-        <img src="assets/tips/traptofire-10.jpg" alt="Trap to Fire daily discipline tip 10" loading="lazy">
-        <img src="assets/tips/traptofire-11.jpg" alt="Trap to Fire daily discipline tip 11" loading="lazy">
-        <img src="assets/tips/traptofire-12.jpg" alt="Trap to Fire daily discipline tip 12" loading="lazy">
-        <img src="assets/tips/traptofire-13.jpg" alt="Trap to Fire daily discipline tip 13" loading="lazy">
-        <img src="assets/tips/traptofire-14.jpg" alt="Trap to Fire daily discipline tip 14" loading="lazy">
-        <img src="assets/tips/traptofire-15.jpg" alt="Trap to Fire daily discipline tip 15" loading="lazy">
-        <img src="assets/tips/traptofire-16.jpg" alt="Trap to Fire daily discipline tip 16" loading="lazy">
-        <img src="assets/tips/traptofire-17.jpg" alt="Trap to Fire daily discipline tip 17" loading="lazy">
-        <img src="assets/tips/traptofire-18.jpg" alt="Trap to Fire daily discipline tip 18" loading="lazy">
-        <img src="assets/tips/traptofire-19.jpg" alt="Trap to Fire daily discipline tip 19" loading="lazy">
-        <img src="assets/tips/traptofire-20.jpg" alt="Trap to Fire daily discipline tip 20" loading="lazy">
-        <img src="assets/tips/traptofire-21.jpg" alt="Trap to Fire daily discipline tip 21" loading="lazy">
-        <img src="assets/tips/traptofire-22.jpg" alt="Trap to Fire unwritten rule 1" loading="lazy">
-        <img src="assets/tips/traptofire-23.jpg" alt="Trap to Fire unwritten rule 2" loading="lazy">
-        <img src="assets/tips/traptofire-24.jpg" alt="Trap to Fire unwritten rule 3" loading="lazy">
-        <img src="assets/tips/traptofire-25.jpg" alt="Trap to Fire unwritten rule 4" loading="lazy">
-        <img src="assets/tips/traptofire-26.jpg" alt="Trap to Fire unwritten rule 5" loading="lazy">
-        <img src="assets/tips/traptofire-27.jpg" alt="Trap to Fire unwritten rule 6" loading="lazy">
-        <img src="assets/tips/traptofire-28.jpg" alt="Trap to Fire unwritten rule 7" loading="lazy">
-        <img src="assets/tips/traptofire-29.jpg" alt="Trap to Fire unwritten rule 8" loading="lazy">
-        <img src="assets/tips/traptofire-30.jpg" alt="Trap to Fire unwritten rule 9" loading="lazy">
-        <img src="assets/tips/traptofire-31.jpg" alt="Trap to Fire unwritten rule 10" loading="lazy">
-        <img src="assets/tips/traptofire-32.jpg" alt="Trap to Fire chicken marinade recipes 1" loading="lazy">
-        <img src="assets/tips/traptofire-33.jpg" alt="Trap to Fire chicken marinade recipes 2" loading="lazy">
-        <img src="assets/tips/traptofire-34.jpg" alt="Trap to Fire chicken marinade recipes 3" loading="lazy">
-        <img src="assets/tips/traptofire-35.jpg" alt="Trap to Fire pasta sauce recipes 1" loading="lazy">
-        <img src="assets/tips/traptofire-36.jpg" alt="Trap to Fire pasta sauce recipes 2" loading="lazy">
-        <img src="assets/tips/traptofire-37.jpg" alt="Trap to Fire pasta sauce recipes 3" loading="lazy">
-        <img src="assets/tips/traptofire-38.jpg" alt="Trap to Fire pasta sauce recipes 4" loading="lazy">
-        <img src="assets/tips/traptofire-39.jpg" alt="How to become a beast in 6 months" loading="lazy">
-        <img src="assets/tips/traptofire-40.jpg" alt="Beast protocol rules 1 and 2: fixed schedule, daily workout" loading="lazy">
-        <img src="assets/tips/traptofire-41.jpg" alt="Beast protocol rules 3 and 4: daily fruit, cold shower" loading="lazy">
-        <img src="assets/tips/traptofire-42.jpg" alt="Beast protocol rules 5 and 6: listen more, say no" loading="lazy">
-        <img src="assets/tips/traptofire-43.jpg" alt="Beast protocol rules 7 and 8: morning walk, quality sleep" loading="lazy">
-        <img src="assets/tips/traptofire-44.jpg" alt="Beast protocol rules 9 and 10: meditation, six months for yourself" loading="lazy">
+        <img src="assets/tips/traptofire-01.jpg" alt="Trap to Fire daily discipline tip" loading="lazy">
+        <img src="assets/tips/traptofire-08.jpg" alt="Trap to Fire daily discipline tip" loading="lazy">
+        <img src="assets/tips/traptofire-15.jpg" alt="Trap to Fire daily discipline tip" loading="lazy">
+        <img src="assets/tips/traptofire-22.jpg" alt="Trap to Fire unwritten rule" loading="lazy">
+        <img src="assets/tips/traptofire-29.jpg" alt="Trap to Fire unwritten rule" loading="lazy">
+        <img src="assets/tips/traptofire-36.jpg" alt="Trap to Fire pasta sauce recipe tip" loading="lazy">
+        <img src="assets/tips/traptofire-43.jpg" alt="Beast protocol rule" loading="lazy">
+        <img src="assets/tips/traptofire-50.jpg" alt="Trap to Fire field notes tip" loading="lazy">
+        <img src="assets/tips/traptofire-57.jpg" alt="Trap to Fire field notes tip" loading="lazy">
+        <img src="assets/tips/traptofire-64.jpg" alt="Trap to Fire field notes tip" loading="lazy">
+        <img src="assets/tips/traptofire-71.jpg" alt="Trap to Fire field notes tip" loading="lazy">
+        <img src="assets/tips/traptofire-78.jpg" alt="Trap to Fire field notes tip" loading="lazy">
+        <img src="assets/tips/traptofire-85.jpg" alt="Trap to Fire field notes tip" loading="lazy">
+        <img src="assets/tips/traptofire-92.jpg" alt="Trap to Fire field notes tip" loading="lazy">
+        <img src="assets/tips/traptofire-99.jpg" alt="Trap to Fire household toxin-reduction tip" loading="lazy">
+        <img src="assets/tips/traptofire-106.jpg" alt="Trap to Fire field notes tip" loading="lazy">
+        <img src="assets/tips/traptofire-113.jpg" alt="Trap to Fire book recommendation tip" loading="lazy">
+        <img src="assets/tips/traptofire-120.jpg" alt="Trap to Fire food-symptom pairing tip" loading="lazy">
+        <img src="assets/tips/traptofire-127.jpg" alt="Trap to Fire mind exercise tip" loading="lazy">
+        <img src="assets/tips/traptofire-134.jpg" alt="Trap to Fire nutrient swap tip" loading="lazy">
+        <img src="assets/tips/traptofire-141.jpg" alt="Trap to Fire hydration tip" loading="lazy">
+        <img src="assets/tips/traptofire-146.jpg" alt="Trap to Fire mind exercise tip" loading="lazy">
       </div>
       <div class="tips-dots" id="tipsDots"></div>
     </div>
